@@ -58,6 +58,8 @@ Argument Against Speculative Investing
   * People from a popular subreddit manipulated the market\, essentially following the herd mentality often bought into overhyped stocks too late\, causing them to purchase at inflated prices\. When the prices crashed\, they were left with significant losses as they had no risk management or exit strategies\.
 
 
+![](img/ShrutiPPT_4.png)
+
 # Objective of the Project
 
 # Age-based portfolio optimization
