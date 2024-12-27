@@ -3,101 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+    <title>Markdown Viewer</title>
+    <!-- Include marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
-        }
-        header h1 {
-            text-align: center;
-            text-transform: uppercase;
-            margin: 0;
-        }
-        section {
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
+        }
+        #content {
             background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin: 20px 0;
         }
-        h2 {
-            color: #333;
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
         }
-        ul {
-            list-style: none;
-            padding: 0;
+        table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
         }
-        ul li {
-            background: #f4f4f4;
-            margin: 5px 0;
-            padding: 10px;
-            border-left: #77aaff 5px solid;
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>John Doe</h1>
-        </div>
-    </header>
-    <div class="container">
-        <section>
-            <h2>Personal Information</h2>
-            <p>Email: johndoe@example.com</p>
-            <p>Phone: (123) 456-7890</p>
-            <p>Address: 123 Main Street, Anytown, USA</p>
-        </section>
-        <section>
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <h3>Bachelor of Science in Computer Science</h3>
-                    <p>University of Example - Graduated: May 2020</p>
-                </li>
-                <li>
-                    <h3>High School Diploma</h3>
-                    <p>Example High School - Graduated: May 2016</p>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Experience</h2>
-            <ul>
-                <li>
-                    <h3>Software Engineer</h3>
-                    <p>Example Corp - June 2020 to Present</p>
-                    <p>Responsible for developing and maintaining web applications.</p>
-                </li>
-                <li>
-                    <h3>Intern</h3>
-                    <p>Tech Solutions - Summer 2019</p>
-                    <p>Assisted in software development and testing.</p>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>Programming Languages: JavaScript, Python, Java</li>
-                <li>Web Technologies: HTML, CSS, React, Node.js</li>
-                <li>Databases: MySQL, MongoDB</li>
-                <li>Version Control: Git, GitHub</li>
-            </ul>
-        </section>
-    </div>
+    <div id="content"></div>
+
+    <script>
+        // Load the Markdown file when the page loads
+        window.addEventListener('load', async () => {
+            const contentDiv = document.getElementById('content');
+            
+            try {
+                // Fetch the markdown content
+                const response = await fetch('Output.md');
+                if (!response.ok) throw new Error('Failed to load file');
+                
+                const markdownText = await response.text();
+                
+                // Convert markdown to HTML and display it
+                contentDiv.innerHTML = marked.parse(markdownText);
+            } catch (error) {
+                contentDiv.innerHTML = `<p style="color: red;">Error loading markdown: ${error.message}</p>`;
+            }
+        });
+    </script>
 </body>
 </html>
