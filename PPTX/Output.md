@@ -81,12 +81,8 @@ Argument Against Speculative Investing
 | Aggressive \(Age 25\-30\) | \{'AAPL': 0\.4\, 'MSFT': 0\.23\, 'AVGO': 0\.22\, 'IEF': 0\.15\} | MDD | 26\.87732295 | 22\.281 | 1\.0187 | 0\.000440368 | 1\.0658 | \-26\.84336989 |
 | Ultra Aggressive \(Age <25\) | \{'AVGO': 1\.0\} | MDD | 38\.98563339 | 36\.028 | 0\.9661 | 0\.000741437 | 1\.3712 | \-48\.29997196 |
 
-![](img/ShrutiPPT_5.png)
-
-![](img/ShrutiPPT_6.jpg)
 
 # Risk measures applied
-
 
 
 * __Riskfolio__  __ Lib Optimizer__
@@ -156,7 +152,7 @@ Argument Against Speculative Investing
 
 ![](img/ShrutiPPT_11.jpg)
 
-![](img/ShrutiPPT_12.jpg)
+<!-- ![](img/ShrutiPPT_12.jpg) -->
 
 # Benefits of Diversification
 
@@ -182,7 +178,3 @@ Argument Against Speculative Investing
   * Data\-driven investment strategies lead to better long\-term outcomes\, enhancing the potential for financial growth\.
 * __Research Over Speculation__
   * Focusing on research rather than speculation allows investors to navigate markets more effectively and confidently\.
-
-
-# Conclusion
-
